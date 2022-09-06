@@ -1,13 +1,14 @@
 # Installation
 
-1. Init mason
+## 1. Init mason
 
 ```bash
 mason init
 ```
 
-2. Install bricks
-   `mason.yaml`
+## 2. Install bricks
+
+`mason.yaml`
 
 ```yaml
 bricks:
@@ -29,8 +30,20 @@ bricks:
       path: bloc_module
 ```
 
-3. Get bricks
+## 3. Get bricks
 
 ```bash
 mason get
 ```
+
+---
+
+# Usage
+
+## 1. Create a freezed bloc module
+
+```bash
+mason make freezed_bloc_module -o lib/modules
+```
+
+> **_NOTE:_** same as `freezed_bloc`, `bloc_view`, `bloc_module`.
