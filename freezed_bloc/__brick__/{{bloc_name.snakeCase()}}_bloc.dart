@@ -1,3 +1,4 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part '{{bloc_name.snakeCase()}}_bloc.freezed.dart';
@@ -10,6 +11,6 @@ class {{bloc_name.pascalCase()}}Bloc extends Bloc<{{bloc_name.pascalCase()}}Even
   }
   
   Future<void> _on{{bloc_name.pascalCase()}}Fetch({{bloc_name.pascalCase()}}Fetch event, Emitter<{{bloc_name.pascalCase()}}State> emit) async {
-    emit(state.copyWith(status: {{module_name.pascalCase()}}State.loading));
+    emit(state.copyWith(status: Load{{module_name.pascalCase()}}State.loading));
   }
 }
