@@ -1,6 +1,6 @@
 part of '{{module_name}}_bloc.dart';
 
-enum {{module_name.pascalCase()}}Status {
+enum Load{{module_name.pascalCase()}}Status {
   initial,
   loading,
   loaded,
@@ -14,13 +14,13 @@ class {{module_name.pascalCase()}}State extends Equatable {
 
   const {{module_name.pascalCase()}}State.initial()
       : this(        
-          status: {{module_name.pascalCase()}}Status.initial,
+          status: Load{{module_name.pascalCase()}}Status.initial,
         );
 
-  final {{module_name.pascalCase()}}Status status;
+  final Load{{module_name.pascalCase()}}Status status;
 
   {{module_name.pascalCase()}}State copyWith({
-    {{module_name.pascalCase()}}Status? status,
+    Load{{module_name.pascalCase()}}Status? status,
   }) {
     return {{module_name.pascalCase()}}State(
       status: status ?? this.status,
