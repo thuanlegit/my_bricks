@@ -1,10 +1,14 @@
 part of '{{module_name.snakeCase()}}_bloc.dart';
 
+enum Load{{module_name.pascalCase()}}State { initial, loading, loaded, error }
+
 @freezed
 class {{module_name.pascalCase()}}State with _${{module_name.pascalCase()}}State {
-  const factory {{module_name.pascalCase()}}State.initial() = {{module_name.pascalCase()}}Initial;
-  
-  const factory {{module_name.pascalCase()}}State.loading() = {{module_name.pascalCase()}}Loading;
-  
-  const factory {{module_name.pascalCase()}}State.loaded() = {{module_name.pascalCase()}}Loaded;
+  const factory {{module_name.pascalCase()}}State({
+    required Load{{module_name.pascalCase()}}State status,
+  }) = _{{module_name.pascalCase()}}State;
+
+  const factory {{module_name.pascalCase()}}State.initial({
+    @Default(Load{{module_name.pascalCase()}}State.initial) Load{{module_name.pascalCase()}}State status,
+  }) = Initial{{module_name.pascalCase()}}State;
 }
