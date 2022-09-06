@@ -1,0 +1,11 @@
+# Register bricks which can be consumed via the Mason CLI.
+# https://github.com/felangel/mason
+bricks:
+  freezed_bloc_module:
+    path: freezed_bloc_module
+  freezed_bloc:
+    path: freezed_bloc
+  bloc_view:
+    path: bloc_view
+  bloc_module:
+    path: bloc_module
