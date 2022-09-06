@@ -26,8 +26,3 @@ vars:
     description: Bloc name
     default: hello
     prompt: Please enter bloc name?
-  output:
-    type: string
-    description: Output directory
-    default: bloc
-    prompt: Please enter output directory?

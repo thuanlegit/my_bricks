@@ -26,8 +26,3 @@ vars:
     description: View name
     default: hello
     prompt: Please enter view name?
-  output:
-    type: string
-    description: Output directory
-    default: view
-    prompt: Please enter output directory?

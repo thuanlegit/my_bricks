@@ -26,8 +26,3 @@ vars:
     description: Module name
     default: hello
     prompt: Please enter module name?
-  output:
-    type: string
-    description: Output directory
-    default: modules
-    prompt: Please enter output directory?
