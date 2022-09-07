@@ -11,6 +11,6 @@ class {{bloc_name.pascalCase()}}Bloc extends Bloc<{{bloc_name.pascalCase()}}Even
   }
   
   Future<void> _on{{bloc_name.pascalCase()}}Fetch(Fetch{{bloc_name.pascalCase()}}Event event, Emitter<{{bloc_name.pascalCase()}}State> emit) async {
-    emit(state.copyWith(status: Load{{bloc_name.pascalCase()}}State.loading));
+    emit(state.copyWith(status: Load{{bloc_name.pascalCase()}}Status.loading));
   }
 }
