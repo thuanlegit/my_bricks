@@ -1,0 +1,39 @@
+name: { { package_name } }
+description: A new Flutter project using BloC Super Base by Lokishengoku.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_localizations:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/locales/
+    - assets/images/
+    - assets/icons/
+    - assets/fonts/
+
+flutter_gen:
+  output: lib/global/assets
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+    rive: true
