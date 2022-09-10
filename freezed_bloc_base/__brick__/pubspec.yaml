@@ -1,4 +1,4 @@
-name: { { package_name } }
+name: "{{package_name}}"
 description: A new Flutter project using BloC Super Base by Lokishengoku.
 
 publish_to: "none"
