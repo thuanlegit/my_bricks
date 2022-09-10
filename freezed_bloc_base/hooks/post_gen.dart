@@ -21,6 +21,7 @@ void run(HookContext context) async {
           'freezed_annotation',
           'hive',
           'get_it',
+          'loading_animation_widget',
           'google_fonts',
           'dio',
           'pretty_dio_logger',
