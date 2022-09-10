@@ -12,6 +12,10 @@ mason init
 
 ```yaml
 bricks:
+  freezed_bloc_base:
+    git:
+      url: https://github.com/lokishengoku/my_bricks.git
+      path: freezed_bloc_base
   freezed_bloc_module:
     git:
       url: https://github.com/lokishengoku/my_bricks.git
@@ -40,7 +44,25 @@ mason get
 
 # Usage
 
-## 1. Create a freezed bloc module
+## 1. Generate BloC base
+
+```bash
+mason make freezed_bloc_base
+```
+
+### (Optional) To run assets & freezed generator
+
+```bash
+flutter pub run build_runner watch --delete-conflicting-outputs
+```
+
+### (Optional) To run i18n generator
+
+```bash
+flutter pub run i18n_json
+```
+
+## 2. Create a freezed bloc module
 
 ```bash
 mason make freezed_bloc_module -o lib/modules
