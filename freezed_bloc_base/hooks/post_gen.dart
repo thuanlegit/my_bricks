@@ -6,9 +6,39 @@ void run(HookContext context) async {
   try {
     final root = Directory.current.path;
 
+    final getProgress = context.logger.progress('Running flutter pub get');
+    await Process.run(
+      'flutter',
+      ['pub', 'get'],
+      runInShell: true,
+      workingDirectory: root,
+    );
+    getProgress.complete('Done!');
+
     //Install packages
     final addDependencies = context.vars['add_dependencies'];
     if (addDependencies) {
+      final progressDevDependencies = context.logger.progress(
+        'Adding dev dependencies',
+      );
+      await Process.run(
+        'flutter',
+        [
+          'pub',
+          'add',
+          '-d',
+          'freezed',
+          'json_serializable',
+          'build_runner',
+          'flutter_gen_runner',
+          'hive_generator',
+          'i18n_json',
+        ],
+        runInShell: true,
+        workingDirectory: root,
+      );
+      progressDevDependencies.complete('Done!');
+
       final progress = context.logger.progress(
         'Adding dependencies',
       );
@@ -37,27 +67,6 @@ void run(HookContext context) async {
         workingDirectory: root,
       );
       progress.complete('Done!');
-
-      final progressDevDependencies = context.logger.progress(
-        'Adding dev dependencies',
-      );
-      await Process.run(
-        'flutter',
-        [
-          'pub',
-          'add',
-          '-d',
-          'freezed',
-          'json_serializable',
-          'build_runner',
-          'flutter_gen_runner',
-          'hive_generator',
-          'i18n_json',
-        ],
-        runInShell: true,
-        workingDirectory: root,
-      );
-      progressDevDependencies.complete('Done!');
     }
 
     // Run generator
