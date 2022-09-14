@@ -7,17 +7,6 @@ import '{{view_name.snakeCase()}}_view.dart';
 class {{view_name.pascalCase()}}Page extends StatelessWidget {
   static const String name = '/{{view_name.snakeCase()}}';
 
-  static Route<void> route() {
-    return MaterialPageRoute(
-      builder: (ctx) {
-        return BlocProvider(
-          create: (context) => {{view_name.pascalCase()}}Bloc(),
-          child: const {{view_name.pascalCase()}}View(),
-        );
-      },
-    );
-  }
-
   const {{view_name.pascalCase()}}Page({
     Key? key,
   }) : super(key: key);
@@ -25,7 +14,7 @@ class {{view_name.pascalCase()}}Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => {{view_name.pascalCase()}}Bloc(),
+      create: (context) => {{view_name.pascalCase()}}Bloc(exceptionHandlerBloc: context.read()),
       child: const {{view_name.pascalCase()}}View(),
     );
   }
