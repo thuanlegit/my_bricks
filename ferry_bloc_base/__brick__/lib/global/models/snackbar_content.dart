@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 enum SnackbarType {
@@ -27,6 +28,19 @@ class SnackbarContent {
   });
 
   Widget toWidget(BuildContext context) {
+    if (kIsWeb) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.8 > 300
+                ? 300
+                : MediaQuery.of(context).size.width * 0.8,
+            child: _content(context),
+          ),
+        ],
+      );
+    }
     if (Platform.isIOS || Platform.isAndroid) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
