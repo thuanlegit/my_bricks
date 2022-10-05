@@ -32,6 +32,10 @@ bricks:
     git:
       url: https://github.com/lokishengoku/my_bricks.git
       path: bloc_module
+  ferry_bloc_base:
+    git:
+      url: https://github.com/lokishengoku/my_bricks.git
+      path: ferry_bloc_base
 ```
 
 ## 3. Get bricks
@@ -46,8 +50,16 @@ mason get
 
 ## 1. Generate BloC base
 
+### Rest base
+
 ```bash
 mason make freezed_bloc_base
+```
+
+### Graphql base (ferry)
+
+```bash
+mason make ferry_bloc_base
 ```
 
 ### (Optional) To run assets & freezed generator

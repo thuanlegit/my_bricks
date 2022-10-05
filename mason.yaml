@@ -11,3 +11,5 @@ bricks:
     path: bloc_view
   bloc_module:
     path: bloc_module
+  ferry_bloc_base:
+    path: ferry_bloc_base
