@@ -8,6 +8,17 @@ import 'splash_view.dart';
 class SplashPage extends StatelessWidget {
   static const String name = '/splash';
 
+  static Route<void> route() {
+    return MaterialPageRoute(
+      builder: (ctx) {
+        return BlocProvider(
+          create: (context) => SplashBloc(superBloc: context.read()),
+          child: const SplashView(),
+        );
+      },
+    );
+  }
+
   const SplashPage({
     Key? key,
   }) : super(key: key);
@@ -15,7 +26,7 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SplashBloc(exceptionHandlerBloc: context.read())
+      create: (context) => SplashBloc(superBloc: context.read())
         ..add(
           const FetchSplashEvent(),
         ),
