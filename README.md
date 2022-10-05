@@ -44,6 +44,12 @@ bricks:
 mason get
 ```
 
+## 4. Run generator listener
+
+```bash
+flutter pub run build_runner watch --delete-conflicting-outputs
+```
+
 ---
 
 # Usage
@@ -62,12 +68,6 @@ mason make freezed_bloc_base
 mason make ferry_bloc_base
 ```
 
-### (Optional) To run assets & freezed generator
-
-```bash
-flutter pub run build_runner watch --delete-conflicting-outputs
-```
-
 ### (Optional) To run i18n generator
 
 ```bash
@@ -81,3 +81,9 @@ mason make freezed_bloc_module -o lib/modules
 ```
 
 > **_NOTE:_** same as `freezed_bloc`, `bloc_view`, `bloc_module`.
+
+# FAQ
+
+## 1. Couldn't run app due to null-safety error
+
+Update [dio package](https://pub.dev/packages/dio) to latest version
