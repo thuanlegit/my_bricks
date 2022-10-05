@@ -62,6 +62,7 @@ void run(HookContext context) async {
           'form_builder_validators',
           'hive_flutter',
           'flutter_svg',
+          'overlay_support',
         ],
         runInShell: true,
         workingDirectory: root,
