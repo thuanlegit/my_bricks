@@ -1,0 +1,25 @@
+targets:
+  $default:
+    builders:
+      ferry_generator|graphql_builder:
+        enabled: true
+        options:
+          schema: "{{package_name}}"|lib/global/graphql/schema.graphql
+          type_overrides:
+            JSON:
+              name: JsonObject
+              import: "package:built_value/json_object.dart"
+            JSONObject:
+              name: JsonObject
+              import: "package:built_value/json_object.dart"
+      ferry_generator|serializer_builder:
+        enabled: true
+        options:
+          schema: "{{package_name}}"|lib/global/graphql/schema.graphql
+          type_overrides:
+            JSON:
+              name: JsonObject
+              import: "package:built_value/json_object.dart"
+            JSONObject:
+              name: JsonObject
+              import: "package:built_value/json_object.dart"

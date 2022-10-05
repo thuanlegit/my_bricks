@@ -1,0 +1,12 @@
+query Pokemons($limit: Int!, $offset: Int!) {
+  pokemons(limit: $limit, offset: $offset) {
+    count
+    next
+    previous
+    results {
+      id
+      name
+      avatar
+    }
+  }
+}

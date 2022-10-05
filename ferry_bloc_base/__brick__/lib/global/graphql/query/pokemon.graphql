@@ -1,0 +1,38 @@
+query Pokemon($id: ID!) {
+  pokemon(id: $id) {
+    id
+    name
+    base_experience
+    color {
+      light
+      dark
+    }
+    height {
+      value
+      in_meter
+      in_feet
+    }
+    is_default
+    order
+    weight {
+      value
+      in_kg
+      in_lbs
+    }
+    abilities {
+      name
+      slot
+    }
+    forms {
+      id
+      name
+      order
+      form_order
+      is_default
+      is_battle_only
+      is_mega
+      form_name
+    }
+    avatar
+  }
+}

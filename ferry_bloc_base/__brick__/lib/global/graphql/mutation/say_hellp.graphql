@@ -1,0 +1,3 @@
+mutation SayHello($input: String!) {
+  sayHello(name: $input)
+}
