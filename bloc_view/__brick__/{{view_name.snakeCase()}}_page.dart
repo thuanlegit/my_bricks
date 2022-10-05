@@ -14,7 +14,7 @@ class {{view_name.pascalCase()}}Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => {{view_name.pascalCase()}}Bloc(exceptionHandlerBloc: context.read()),
+      create: (context) => {{view_name.pascalCase()}}Bloc(superBloc: context.read()),
       child: const {{view_name.pascalCase()}}View(),
     );
   }

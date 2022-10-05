@@ -7,12 +7,12 @@ part '../../{{% output %}}/{{module_name.snakeCase()}}/bloc/{{module_name}}_stat
 class {{module_name.pascalCase()}}Bloc extends Bloc<{{module_name.pascalCase()}}Event, {{module_name.pascalCase()}}State> {
   
   {{module_name.pascalCase()}}Bloc({
-    required this.exceptionHandlerBloc,
+    required this.superBloc,
   }) : super(const {{module_name.pascalCase()}}State.initial()) {
     on<Fetch{{module_name.pascalCase()}}Event>(_onHelloFetch);
   }
 
-  final ExceptionHandlerBloc exceptionHandlerBloc;
+  final SuperBloc superBloc;
   
   Future<void> _onHelloFetch(Fetch{{module_name.pascalCase()}}Event event, Emitter<{{module_name.pascalCase()}}State> emit) async {
     emit(state.copyWith(status: Load{{module_name.pascalCase()}}Status.loading));
