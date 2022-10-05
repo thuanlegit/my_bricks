@@ -28,7 +28,7 @@ class SnackbarContent {
   });
 
   Widget toWidget(BuildContext context) {
-    if (kIsWeb) {
+    if (kIsWeb || (!Platform.isAndroid && !Platform.isIOS)) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -41,24 +41,11 @@ class SnackbarContent {
         ],
       );
     }
-    if (Platform.isIOS || Platform.isAndroid) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: _content(context),
-          ),
-        ],
-      );
-    }
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.8 > 300
-              ? 300
-              : MediaQuery.of(context).size.width * 0.8,
+          width: MediaQuery.of(context).size.width,
           child: _content(context),
         ),
       ],
